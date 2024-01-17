@@ -2,7 +2,7 @@
 FROM node:lts
 
 # Set the working directory in the container
-WORKDIR /app
+WORKDIR /src
 
 # Copy package.json and package-lock.json to the container
 COPY package*.json ./
@@ -15,7 +15,6 @@ COPY . .
 
 # Build the Angular project
 RUN npm run build
-
 # Expose the port that the Angular app will run on
 EXPOSE 4200
 
