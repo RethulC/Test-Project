@@ -1,4 +1,4 @@
-# Use an official Node.js LTS (Long Term Support) image as the base image
+# Use node:alpine image as the base image
 FROM node:alpine
 
 # Set the working directory in the container
@@ -15,6 +15,7 @@ COPY . .
 
 # Build the Angular project
 RUN npm run build
+
 # Expose the port that the Angular app will run on
 EXPOSE 4200
 
