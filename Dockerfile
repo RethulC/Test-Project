@@ -1,5 +1,5 @@
 # Use node:alpine image as the base image
-FROM node:14-alpine
+FROM node:alpine
 
 # Set the working directory in the container
 WORKDIR /app
@@ -8,13 +8,13 @@ WORKDIR /app
 COPY package*.json ./
 
 # Install project dependencies
-RUN npm install --save-dev @angular-devkit/build-angular
+RUN npm install
 
 # Copy the entire project to the container
 COPY . .
 
 # Build the Angular project
-RUN ng build
+RUN npm run build
 
 # Expose the port that the Angular app will run on
 EXPOSE 4200
