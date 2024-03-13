@@ -1,5 +1,5 @@
 # Use an official Node.js runtime as the base image
-FROM node:18 as builder
+FROM node:14 as builder
 
 WORKDIR /app
 
