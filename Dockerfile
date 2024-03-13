@@ -1,5 +1,5 @@
 # Use node:alpine image as the base image
-FROM node:alpine
+FROM node:14-alpine
 
 # Set the working directory in the container
 WORKDIR /app
@@ -8,7 +8,7 @@ WORKDIR /app
 COPY package*.json ./
 
 # Install project dependencies
-RUN npm install -g npm@10.5.0
+RUN npm install
 
 # Copy the entire project to the container
 COPY . .
