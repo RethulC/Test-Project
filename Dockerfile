@@ -18,4 +18,4 @@ RUN ng build
 EXPOSE 4200
 
 # Start NGINX
-CMD ["nginx", "-g", "daemon off;"]
+CMD ["npm" "start"]
