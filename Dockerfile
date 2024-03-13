@@ -1,10 +1,7 @@
 # Use an official Node.js runtime as the base image
-FROM node:14 as builder
+FROM node:18 as builder
 
 WORKDIR /app
-
-# Update npm to a compatible version
-RUN npm install -g npm@7
 
 # Install Angular CLI globally
 RUN npm install -g @angular/cli
