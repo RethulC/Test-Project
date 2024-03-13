@@ -4,7 +4,7 @@ FROM node:18 as builder
 WORKDIR /app
 
 # Install Angular CLI globally
-RUN npm install -g @angular/cli
+RUN npm install
 
 # Copy the rest of the application code
 COPY . .
