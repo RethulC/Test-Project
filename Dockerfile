@@ -3,6 +3,8 @@ FROM node:14 as builder
 
 WORKDIR /app
 
+RUN npm install -g @angular/cli
+
 COPY package*.json ./
 
 # Install Angular CLI globally
@@ -18,7 +20,7 @@ RUN ng build
 FROM nginx:alpine
 
 # Copy the built Angular app from the builder stage to the NGINX HTML directory
-COPY --from=builder /app/dist/<your-angular-app-name> /usr/share/nginx/html
+COPY --from=builder /app/dist/Test-project /usr/share/nginx/html
 
 # Expose the port that the Angular app will run on
 EXPOSE 80
