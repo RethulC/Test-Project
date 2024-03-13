@@ -9,7 +9,7 @@ COPY package*.json ./
 RUN npm install -g @angular/cli
 
 # Install project dependencies
-RUN npm install
+RUN npm cache clean --force && npm install
 
 # Copy the rest of the application code
 COPY . .
