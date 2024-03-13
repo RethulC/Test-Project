@@ -6,6 +6,9 @@ WORKDIR /app
 COPY package*.json ./
 
 # Install Angular CLI globally
+RUN npm install -g @angular/cli
+
+# Install project dependencies
 RUN npm install
 
 # Copy the rest of the application code
@@ -18,4 +21,4 @@ RUN ng build
 EXPOSE 4200
 
 # Start NGINX
-CMD ["npm" "start"]
+CMD ["npm", "start"]
