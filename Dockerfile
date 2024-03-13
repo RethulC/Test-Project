@@ -10,6 +10,10 @@ COPY package*.json ./
 # Install project dependencies
 RUN npm install -g npm@10.5.0
 
+RUN npm install -g @angular/cli
+
+RUN npm install
+
 # Copy the entire project to the container
 COPY . .
 
