@@ -3,8 +3,6 @@ FROM node:14 as builder
 
 WORKDIR /app
 
-RUN npm install -g @angular/cli
-
 COPY package*.json ./
 
 # Install Angular CLI globally
