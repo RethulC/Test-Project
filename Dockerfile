@@ -1,5 +1,5 @@
 # Use an official Node.js runtime as the base image
-FROM node:14 as builder
+FROM node:18-alpine
 
 WORKDIR /app
 
@@ -9,7 +9,7 @@ COPY package*.json ./
 RUN npm install -g @angular/cli
 
 # Install project dependencies
-RUN npm cache clean --force && npm install
+RUN npm install
 
 # Copy the rest of the application code
 COPY . .
